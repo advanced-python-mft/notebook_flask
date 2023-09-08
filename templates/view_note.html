@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ note.title }}</title>
+    <!-- Include local Bootstrap CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Add your CSS styles here -->
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>{{ note.title }}</h1>
+        <p>{{ note.content }}</p>
+        <p><strong>Created Date:</strong> {{ note.created_at }}</p>
+        <a href="{{ url_for('index') }}" class="btn btn-secondary">Back to Notes</a>
+    </div>
+
+    <!-- Include local Bootstrap JS and Popper.js (if needed) -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- Optional: include Popper.js if needed -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+</body>
+</html>

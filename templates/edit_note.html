@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note</title>
+    <!-- Include local Bootstrap CSS -->
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <!-- Add your CSS styles here -->
+    <style>
+        /* Custom CSS for styling input fields */
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-control {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Edit Note</h1>
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.title.label }}
+                {{ form.title(class="form-control") }}
+            </div>
+            <div class="form-group">
+                {{ form.content.label }}
+                {{ form.content(class="form-control") }}
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-primary">Update</button>
+            </div>
+        </form>
+        <a href="{{ url_for('view_note', id=id) }}" class="btn btn-secondary">Cancel</a>
+    </div>
+
+    <!-- Include local Bootstrap JS and Popper.js (if needed) -->
+    <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    <!-- Optional: include Popper.js if needed -->
+    <script src="{{ url_for('static', filename='js/popper.min.js') }}"></script>
+</body>
+</html>
